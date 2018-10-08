@@ -1,0 +1,100 @@
+object frmCreatorOpts: TfrmCreatorOpts
+  Left = 981
+  Height = 238
+  Top = 183
+  Width = 289
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsToolWindow
+  Caption = 'AFS Creator Options'
+  ClientHeight = 238
+  ClientWidth = 289
+  Color = clBtnFace
+  OnShow = FormShow
+  LCLVersion = '1.8.4.0'
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 96
+    Top = 8
+    Width = 272
+    Caption = 'Block size'
+    ClientHeight = 74
+    ClientWidth = 264
+    TabOrder = 0
+    object cbBlockSize: TComboBox
+      Left = 8
+      Height = 20
+      Top = 8
+      Width = 208
+      Font.Height = -11
+      ItemHeight = 0
+      OnChange = cbBlockSizeChange
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object lblBytes: TLabel
+      Left = 227
+      Height = 13
+      Top = 11
+      Width = 29
+      Caption = 'bytes'
+      Font.Height = -11
+      ParentColor = False
+      ParentFont = False
+    end
+    object editBlockCustom: TEdit
+      Left = 88
+      Height = 22
+      Top = 40
+      Width = 164
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 13
+      Top = 45
+      Width = 76
+      Caption = 'Custom value:'
+      Font.Height = -11
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Height = 80
+    Top = 112
+    Width = 272
+    Caption = 'Misc.'
+    ClientHeight = 58
+    ClientWidth = 264
+    TabOrder = 1
+    object cbPadding: TCheckBox
+      Left = 8
+      Height = 18
+      Top = 8
+      Width = 205
+      Caption = '512 kB padding before 1st file'
+      OnClick = cbPaddingClick
+      TabOrder = 0
+    end
+    object cbEndList: TCheckBox
+      Left = 8
+      Height = 18
+      Top = 32
+      Width = 102
+      Caption = 'Write files list'
+      OnClick = cbEndListClick
+      TabOrder = 1
+    end
+  end
+  object btConfirm: TButton
+    Left = 191
+    Height = 17
+    Top = 204
+    Width = 89
+    Caption = 'Ok'
+    OnClick = btConfirmClick
+    TabOrder = 2
+  end
+end

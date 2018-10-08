@@ -1,0 +1,167 @@
+object frmCreator: TfrmCreator
+  Left = 577
+  Height = 379
+  Top = 167
+  Width = 361
+  Caption = 'AFS Creator'
+  ClientHeight = 379
+  ClientWidth = 361
+  Color = clBtnFace
+  Menu = MainMenu2
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.8.4.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 15
+    Top = 364
+    Width = 361
+    Panels = <>
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 344
+    Top = 8
+    Width = 345
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Caption = 'Files List:'
+    ClientHeight = 322
+    ClientWidth = 337
+    TabOrder = 1
+    object lbCreationList: TListBox
+      Left = 5
+      Height = 280
+      Top = 8
+      Width = 326
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ItemHeight = 0
+      MultiSelect = True
+      PopupMenu = PopupMenu2
+      TabOrder = 0
+    end
+    object editFileCnt: TEdit
+      Left = 258
+      Height = 22
+      Top = 296
+      Width = 73
+      Anchors = [akRight, akBottom]
+      Color = clBtnFace
+      ReadOnly = True
+      TabOrder = 1
+      Text = '0'
+    end
+    object lblFileCnt: TLabel
+      Left = 188
+      Height = 13
+      Top = 301
+      Width = 63
+      Anchors = [akRight, akBottom]
+      Caption = 'Files Count:'
+      Font.Height = -11
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object SaveDialog2: TSaveDialog
+    Options = [ofOverwritePrompt, ofPathMustExist, ofEnableSizing, ofViewDetail]
+    left = 120
+    top = 96
+  end
+  object OpenDialog2: TOpenDialog
+    Options = [ofAllowMultiSelect, ofPathMustExist, ofFileMustExist, ofEnableSizing, ofViewDetail]
+    left = 120
+    top = 48
+  end
+  object MainMenu2: TMainMenu
+    left = 64
+    top = 48
+    object File1: TMenuItem
+      Caption = 'File'
+      OnClick = File1Click
+      object Addfiles1: TMenuItem
+        Caption = 'Add files...'
+        ShortCut = 16463
+        OnClick = Addfiles1Click
+      end
+      object Adddirectory1: TMenuItem
+        Caption = 'Add directory...'
+        ShortCut = 49231
+        OnClick = Adddirectory1Click
+      end
+      object ImportXMLlist1: TMenuItem
+        Caption = 'Import XML list...'
+        OnClick = ImportXMLlist1Click
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object SaveAfs1: TMenuItem
+        Caption = 'Save Afs...'
+        Enabled = False
+        ShortCut = 16467
+        OnClick = SaveAfs1Click
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object Close1: TMenuItem
+        Caption = 'Close'
+        ShortCut = 16472
+        OnClick = Close1Click
+      end
+    end
+    object Tools1: TMenuItem
+      Caption = 'Tools'
+      OnClick = Tools1Click
+      object Deletefiles1: TMenuItem
+        Caption = 'Delete selected files...'
+        Enabled = False
+        OnClick = Deletefiles1Click
+      end
+      object Deleteallfiles1: TMenuItem
+        Caption = 'Delete all files...'
+        Enabled = False
+        OnClick = Deleteallfiles1Click
+      end
+      object Masscreation1: TMenuItem
+        Caption = '&Mass creation...'
+        ShortCut = 113
+        OnClick = Masscreation1Click
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Options1: TMenuItem
+        Caption = 'Options...'
+        ShortCut = 121
+        OnClick = Options1Click
+      end
+    end
+  end
+  object PopupMenu2: TPopupMenu
+    OnPopup = PopupMenu2Popup
+    left = 64
+    top = 96
+    object Addfiles2: TMenuItem
+      Caption = 'Add files...'
+      OnClick = Addfiles2Click
+    end
+    object Adddirectory2: TMenuItem
+      Caption = 'Add directory...'
+      OnClick = Adddirectory2Click
+    end
+    object N4: TMenuItem
+      Caption = '-'
+    end
+    object Deleteselectedfiles1: TMenuItem
+      Caption = 'Delete selected files...'
+      Enabled = False
+      OnClick = Deleteselectedfiles1Click
+    end
+  end
+  object SelectDirectoryDialog2: TSelectDirectoryDialog
+    Options = [ofPathMustExist, ofEnableSizing, ofViewDetail]
+    left = 120
+    top = 152
+  end
+end

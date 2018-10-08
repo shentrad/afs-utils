@@ -1,0 +1,48 @@
+object frmProgress: TfrmProgress
+  Left = 608
+  Height = 102
+  Top = 434
+  Width = 409
+  BorderIcons = []
+  BorderStyle = bsToolWindow
+  Caption = '< Dynamic title >'
+  ClientHeight = 102
+  ClientWidth = 409
+  Color = clBtnFace
+  Position = poDefaultPosOnly
+  LCLVersion = '1.8.4.0'
+  object lblCurrentTask: TLabel
+    Left = 8
+    Height = 13
+    Top = 8
+    Width = 127
+    Caption = '(current operation here)'
+    Font.Height = -11
+    ParentColor = False
+    ParentFont = False
+  end
+  object btCancel: TButton
+    Left = 319
+    Height = 17
+    Top = 72
+    Width = 81
+    Caption = 'Cancel'
+    TabOrder = 0
+  end
+  object ProgressBar1: TProgressBar
+    Left = 8
+    Height = 25
+    Top = 32
+    Width = 313
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Left = 332
+    Height = 25
+    Top = 32
+    Width = 68
+    BevelInner = bvLowered
+    Caption = '0%'
+    TabOrder = 2
+  end
+end
