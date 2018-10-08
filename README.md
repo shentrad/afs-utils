@@ -1,6 +1,6 @@
 # Shenmue AFS Utils
 
-Shenmue AFS Utils is a GUI application used to open AFS files, uncompressed archive files found in Shenmue, Shenmue II and other SEGA games.
+Shenmue AFS Utils is a GUI application used to create, open and extract content of AFS files, uncompressed archive files found in Shenmue, Shenmue II and other SEGA games.
 
 ## History
 
