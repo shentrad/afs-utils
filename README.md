@@ -20,7 +20,7 @@ Binaries will be made available soon:
 This project can be compiled using the latest stable version of [Lazarus/Free Pascal](http://www.lazarus-ide.org/).
 
 Also needed:
-- A copy of the latest ['common' repository](https://github.com/shentrad/common).
+- A copy of the latest [shentrad/common repository](https://github.com/shentrad/common).
 
 The macOS 64-bits version can be compiled using the latest Lazarus trunk code built with the Cocoa LCL. Please see: [Using Cocoa from Trunk](https://macpgmr.github.io/MacXPlatform/UsingCocoaFromTrunk.html)
 
