@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, about, uintlist, main, progress, search, creator, creatoropts,
+  Forms, about, uintlist, progress, main, search, creator, creatoropts,
   afscreate, UAfsCreation, charsutil, afsparser, afsextract, uafsextraction,
   xmlutil, searchutil;
 
@@ -22,7 +22,6 @@ begin
   Application.CreateForm(TfrmSearch, frmSearch);
   Application.CreateForm(TfrmCreator, frmCreator);
   Application.CreateForm(TfrmCreatorOpts, frmCreatorOpts);
-  Application.CreateForm(TfrmProgress, frmProgress);
   Application.Run;
 end.
 

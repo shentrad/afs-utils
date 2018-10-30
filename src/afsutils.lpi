@@ -38,7 +38,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="units;engine;../../common/src/about;../../common/src"/>
+            <OtherUnitFiles Value="units;engine;../../common/src/about;../../common/src;../../common/src/progress"/>
             <UnitOutputDirectory Value="../lib/$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Conditionals Value="//Unix and Darwin (macOS) specific options
@@ -99,75 +99,74 @@ end;"/>
         <ResourceBaseClass Value="Form"/>
       </Unit1>
       <Unit2>
-        <Filename Value="units/progress.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmProgress"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit2>
-      <Unit3>
         <Filename Value="units/search.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmSearch"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit3>
-      <Unit4>
+      </Unit2>
+      <Unit3>
         <Filename Value="units/creator.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmCreator"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit4>
-      <Unit5>
+      </Unit3>
+      <Unit4>
         <Filename Value="units/creatoropts.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmCreatorOpts"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="engine/afscreate.pas"/>
+        <IsPartOfProject Value="True"/>
       </Unit5>
       <Unit6>
-        <Filename Value="engine/afscreate.pas"/>
+        <Filename Value="engine/uafscreation.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="engine/uafscreation.pas"/>
+        <Filename Value="engine/charsutil.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="engine/charsutil.pas"/>
+        <Filename Value="engine/afsparser.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit8>
       <Unit9>
-        <Filename Value="engine/afsparser.pas"/>
+        <Filename Value="engine/afsextract.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit9>
       <Unit10>
-        <Filename Value="engine/afsextract.pas"/>
+        <Filename Value="engine/uafsextraction.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit10>
       <Unit11>
-        <Filename Value="engine/uafsextraction.pas"/>
+        <Filename Value="engine/xmlutil.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit11>
       <Unit12>
-        <Filename Value="engine/xmlutil.pas"/>
+        <Filename Value="engine/searchutil.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit12>
       <Unit13>
-        <Filename Value="engine/searchutil.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit13>
-      <Unit14>
         <Filename Value="../../common/src/about/about.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmAbout"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit14>
-      <Unit15>
+      </Unit13>
+      <Unit14>
         <Filename Value="../../common/src/uintlist.pas"/>
         <IsPartOfProject Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="../../common/src/progress/progress.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmProgress"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit15>
     </Units>
   </ProjectOptions>
@@ -178,7 +177,7 @@ end;"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="units;engine;../../common/src/about;../../common/src"/>
+      <OtherUnitFiles Value="units;engine;../../common/src/about;../../common/src;../../common/src/progress"/>
       <UnitOutputDirectory Value="../lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Conditionals Value="//Unix and Darwin (macOS) specific options
