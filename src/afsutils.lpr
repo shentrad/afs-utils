@@ -7,8 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, about, uintlist, progress, main, search, creator, creatoropts,
-  afscreate, UAfsCreation, charsutil, afsparser, afsextract, uafsextraction,
+  Forms, about, uintlist, charsutil, progress, main, search, creator,
+  creatoropts, afscreate, UAfsCreation, afsparser, afsextract, uafsextraction,
   xmlutil, searchutil;
 
 {$R *.res}

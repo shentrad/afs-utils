@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="12"/>
     <General>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
       <SessionStorage Value="InProjectDir"/>
-      <MainUnit Value="0"/>
       <Title Value="Shenmue AFS Utils"/>
       <Scaled Value="True"/>
       <ResourceType Value="res"/>
@@ -25,7 +27,7 @@
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="3"/>
       <RevisionNr Value="7"/>
-      <BuildNr Value="89"/>
+      <BuildNr Value="90"/>
       <StringTable Comments="http://shenmuesubs.sf.net/" CompanyName="Shentrad Team" FileDescription="Shenmue AFS Utils" InternalName="AFS Utils" LegalCopyright="© Copyleft 2006-2018" LegalTrademarks="Shenmue is copyrighted SEGA © 1999, 2001" OriginalFilename="afsutils" ProductName="Shenmue Translation Pack" ProductVersion="2.3"/>
     </VersionInfo>
     <BuildModes Count="2">
@@ -42,12 +44,12 @@
             <UnitOutputDirectory Value="../lib/$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Conditionals Value="//Unix and Darwin (macOS) specific options
-if SrcOS = 'unix' then begin
-  CustomOptions += ' -dUseCThreads';
+if SrcOS = &apos;unix&apos; then begin
+  CustomOptions += &apos; -dUseCThreads&apos;;
 
   //Remove this condition if your macOS version is &lt; 10.14
-  if TargetOS = 'darwin' then begin
-    CustomOptions += ' -WM10.14';
+  if TargetOS = &apos;darwin&apos; then begin
+    CustomOptions += &apos; -WM10.14&apos;;
   end;
 end;"/>
           <CodeGeneration>
@@ -77,9 +79,10 @@ end;"/>
       <Version Value="2"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
     </RunParams>
     <RequiredPackages Count="1">
       <Item1>
@@ -128,45 +131,46 @@ end;"/>
         <IsPartOfProject Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="engine/charsutil.pas"/>
+        <Filename Value="engine/afsparser.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="engine/afsparser.pas"/>
+        <Filename Value="engine/afsextract.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit8>
       <Unit9>
-        <Filename Value="engine/afsextract.pas"/>
+        <Filename Value="engine/uafsextraction.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit9>
       <Unit10>
-        <Filename Value="engine/uafsextraction.pas"/>
+        <Filename Value="engine/xmlutil.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit10>
       <Unit11>
-        <Filename Value="engine/xmlutil.pas"/>
+        <Filename Value="engine/searchutil.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit11>
       <Unit12>
-        <Filename Value="engine/searchutil.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit12>
-      <Unit13>
         <Filename Value="../../common/src/about/about.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmAbout"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit13>
-      <Unit14>
+      </Unit12>
+      <Unit13>
         <Filename Value="../../common/src/uintlist.pas"/>
         <IsPartOfProject Value="True"/>
-      </Unit14>
-      <Unit15>
+      </Unit13>
+      <Unit14>
         <Filename Value="../../common/src/progress/progress.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmProgress"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="../../common/src/charsutil.pas"/>
+        <IsPartOfProject Value="True"/>
       </Unit15>
     </Units>
   </ProjectOptions>
@@ -181,13 +185,14 @@ end;"/>
       <UnitOutputDirectory Value="../lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Conditionals Value="//Unix and Darwin (macOS) specific options
-if SrcOS = 'unix' then begin
-  CustomOptions += ' -dUseCThreads';
+if SrcOS = &apos;unix&apos; then begin
+  CustomOptions += &apos; -dUseCThreads&apos;;
 
   //Remove this condition if your macOS version is &lt; 10.14
-  if TargetOS = 'darwin' then begin
-    CustomOptions += ' -WM10.14';
-  end;
+  //Probably not needed anymore, as of 2023...
+  {if TargetOS = &apos;darwin&apos; then begin
+    CustomOptions += &apos; -WM10.14&apos;;
+  end;}
 end;"/>
     <Parsing>
       <SyntaxOptions>
@@ -208,7 +213,6 @@ end;"/>
         <DebugInfoType Value="dsDwarf2Set"/>
         <UseHeaptrc Value="True"/>
         <TrashVariables Value="True"/>
-        <UseExternalDbgSyms Value="True"/>
       </Debugging>
       <Options>
         <Win32>
