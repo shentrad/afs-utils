@@ -345,24 +345,35 @@ end;
 procedure TfrmMain.AddDirToList(const FilePath: String);
 var
   SR: TSearchRec;
+  fListSorted: TStringList;
+  i: Integer;
 begin
-  if FindFirst(FilePath+'*.*', faAnyFile, SR) = 0 then begin
+  fListSorted := TStringList.Create;
+  fListSorted.Sorted := True;
+
+  if FindFirst(FilePath+'*.*', faAnyFile-faDirectory, SR) = 0 then begin
     repeat
-      if (SR.Attr <> faDirectory) {$IFDEF UNIX}and (SR.Name <> '.') and (SR.Name <> '..') and (SR.Name[1] <> '.'){$ENDIF} then begin
+      if (SR.Name <> '.') and (SR.Name <> '..') and (SR.Name[1] <> '.') then begin
         if (ExtractFileExt(SR.Name) = '.afs') or (ExtractFileExt(SR.Name) = '.AFS') then begin
           if IsFilePresent(FilePath+SR.Name) then begin
             MsgBox(SR.Name+' is already opened.', 'Error', MB_ICONERROR);
           end
           else begin
             if IsValidAfs(FilePath+SR.Name) then begin
-              afsFileName.Add(FilePath+SR.Name);
-              lbMainList.Items.Add(SR.Name);
+              fListSorted.Add(Sr.Name);
             end;
           end;
         end;
       end;
     until (FindNext(SR) <> 0);
   end;
+
+  for i:=0 to fListSorted.Count-1 do begin
+    afsFileName.Add(FilePath+fListSorted[i]);
+    lbMainList.Items.Add(fListSorted[i]);
+  end;
+
+  fListSorted.Free;
 end;
 
 procedure TfrmMain.LoadAfsInfos(const NameIndex: Integer);

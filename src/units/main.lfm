@@ -8,10 +8,10 @@ object frmMain: TfrmMain
   ClientWidth = 577
   Color = clBtnFace
   Menu = MainMenu1
+  Position = poScreenCenter
+  LCLVersion = '3.99.0.0'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  Position = poScreenCenter
-  LCLVersion = '2.2.7.0'
   object GroupBox1: TGroupBox
     Left = 16
     Height = 424
@@ -21,6 +21,7 @@ object frmMain: TfrmMain
     Caption = 'Files List:'
     ClientHeight = 397
     ClientWidth = 151
+    ParentBackground = False
     TabOrder = 0
     object lbMainList: TListBox
       Left = 5
@@ -29,9 +30,9 @@ object frmMain: TfrmMain
       Width = 144
       Anchors = [akTop, akLeft, akBottom]
       ItemHeight = 0
-      OnClick = lbMainListClick
       PopupMenu = PopupMenu2
       TabOrder = 0
+      OnClick = lbMainListClick
     end
     object lblMainCount: TLabel
       Left = 8
@@ -67,6 +68,7 @@ object frmMain: TfrmMain
     Caption = 'Informations:'
     ClientHeight = 397
     ClientWidth = 367
+    ParentBackground = False
     TabOrder = 1
     object lblHeader: TLabel
       Left = 8
@@ -179,10 +181,10 @@ object frmMain: TfrmMain
       Font.Height = -11
       ItemHeight = 0
       MultiSelect = True
-      OnClick = lbCurrentAfsClick
       ParentFont = False
       PopupMenu = PopupMenu1
       TabOrder = 3
+      OnClick = lbCurrentAfsClick
     end
     object editSelectedSize: TEdit
       Left = 128
